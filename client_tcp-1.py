@@ -1,16 +1,18 @@
 import socket
 import struct
+import json
+
+def format_single_student_response(response):
+    student = json.loads(response)
+    return f"ID: {student['ID']}, First Name: {student['Fname']}, Last Name: {student['Lname']}, Score: {student['score']}"
+
+def format_multiple_students_response(response):
+    students = json.loads(response)
+    return "\n".join([f"ID: {student['ID']}, First Name: {student['Fname']}, Last Name: {student['Lname']}, Score: {student['score']}" for student in students])
 
 def main(server_host, server_port):
-    # Create a socket object with IPv4 addressing and TCP protocol
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    
-    # Connect the socket to the server
     client_socket.connect((server_host, server_port))
-    
-    
-    
-    
     
     while True:
         print(f"\nMENU\n")
@@ -50,11 +52,18 @@ def main(server_host, server_port):
             client_socket.send(f"DELETE,{id}".encode())
 
         response = client_socket.recv(1024).decode()
-        if response is None:
-            print("No response from server.")
-            continue
         
-        print(f"\n\nServer response:", response)
+        if response:
+            if response.startswith('{'):
+                formatted_response = format_single_student_response(response)
+            elif response.startswith('['):
+                formatted_response = format_multiple_students_response(response)
+            else:
+                formatted_response = response  
+            print("\nServer response:\n", formatted_response)
+        else:
+            print("No response from server.")
+        
 
     client_socket.close()
 
@@ -70,5 +79,5 @@ if __name__ == '__main__':
     main(server_host, server_port)
 
 
-# python client_tcp-1.py 12000
+# python client_tcp-1.py localhost 12000
 # eros.cs.txstate.edu 12000

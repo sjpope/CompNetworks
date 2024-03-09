@@ -45,7 +45,7 @@ def main(port):
     print("Listening on port", port)
     
     database = read_database('db.json')
-    client_socket, client_address = server_socket.accept()  # Accept a new connection
+    client_socket, client_address = server_socket.accept()  
     print("Connected to", client_address)
     
     while True:
