@@ -115,5 +115,5 @@ if __name__ == '__main__':
     main(port)
 
 
-# python server_tcp-1.py 12000
+# python server_udp.py 12000
 # put on eros.cs.txstate.edu

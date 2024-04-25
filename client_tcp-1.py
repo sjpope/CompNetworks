@@ -70,7 +70,7 @@ def main(server_host, server_port):
 if __name__ == '__main__':
     import sys
     if len(sys.argv) != 3:
-        print("Usage: python client_tcp.py <Server IP> <Port>")
+        print("Usage: python client_tcp.py localhost 12000")
         sys.exit(1)
 
     server_host = sys.argv[1]
