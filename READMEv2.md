@@ -27,10 +27,10 @@ python --version
 
 Note: You may need to run pip install socket, json, sys if you don't have these libraries already installed.
 
-### Server Setup on Eros
-1. Connect to Eros using SSH:
+### Server Setup on Environment 1
+1. Connect to Environment 1 using SSH:
     ```bash
-    ssh username@eros.cs.txstate.edu
+    ssh username@Env1
     ```
 2. Navigate to your project directory or create a new one:
     ```bash
@@ -39,10 +39,10 @@ Note: You may need to run pip install socket, json, sys if you don't have these 
     ```
 3. Use SFTP to transfer the server script `server_udp.py` to this directory.
 
-### Client Setup on Zeus
-1. Connect to Zeus using SSH:
+### Client Setup on Environment 2
+1. Connect to Environment 2 using SSH:
     ```bash
-    ssh username@zeus.cs.txstate.edu
+    ssh username@Env2
     ```
 2. Navigate to your project directory or create a new one:
     ```bash

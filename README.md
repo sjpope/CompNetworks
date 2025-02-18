@@ -14,10 +14,10 @@ This project implements a client-server model to manage a simple student databas
 
 ## Installation
 
-### Server Setup on Eros
-1. Connect to Eros using SSH:
+### Server Setup on Linux Environment 1
+1. Connect to Env1 using SSH:
     ```bash
-    ssh username@eros.cs.txstate.edu
+    ssh username@Env1
     ```
 2. Navigate to your project directory or create a new one:
     ```bash
@@ -26,10 +26,10 @@ This project implements a client-server model to manage a simple student databas
     ```
 3. Use SFTP to transfer the server script `server_tcp-1.py` to this directory.
 
-### Client Setup on Zeus
-1. Connect to Zeus using SSH:
+### Client Setup on Linux Environment 2
+1. Connect to Env2 using SSH:
     ```bash
-    ssh username@zeus.cs.txstate.edu
+    ssh username@Env2 
     ```
 2. Navigate to your project directory or create a new one:
     ```bash
